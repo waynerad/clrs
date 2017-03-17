@@ -8,7 +8,7 @@
 // program in 42 minutes. That's pretty good, but probably not good enough to
 // win Google Code Jam (if quicksort was ever a Code Jam problem, which it can't
 // be of course because it's too well known).
-// 
+//
 // The 2nd program, qscompare.go, is just a copy of the first program with a
 // function to compare with the built-in sort system in Go. When I found mine
 // was faster (by a lot), I wrote the third program. The third program switches
@@ -20,7 +20,7 @@
 // or equal or less than or equal) and two swap functions (one that swaps 2 and
 // one that swaps 3 -- I'm sure this is a weird quirk of the way I implemented
 // quicksort, but it works).
-// 
+//
 // Once abstracted through the interface, my times are about the same as Go's
 // built-in sort system. Actually, Go's times are surprisingly consistent while
 // mine vary more, and when mine happens to get a fast time, it slightly beats
@@ -40,8 +40,8 @@ import (
 // This is the interface that lets you sort anything
 type mySorter interface {
 	sizeOfArray() int
-	compareGt(minIdx, maxIdx int) bool
-	compareLt(i, pivot int) bool
+	compareGt(minIdx int, maxIdx int) bool
+	compareLt(i int, pivot int) bool
 	swap2(minIdx int, maxIdx int)
 	swap3(pivot int, i int)
 }
